@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  position: relative;
+}
+nav {
+  background-color: #383838;
+  width: 100%;
+  color: white;
+  height: 5vh;
+  padding: 0 5%;
+  margin-bottom: 40px;
+}
+.logo,
+.menu,
+.hb-icon {
+  display: inline-block;
+}
+.logo {
+  width: 10%;
+  /* background-color: blue; */
+  opacity: 1;
+  text-align: center;
+  font-weight: 600;
+}
+.menu {
+  width: 75%;
+  /* background-color: rgb(134, 5, 70); */
+  opacity: 1;
+  text-align: center;
+
+  /* display: none; */
+}
+.menu a,
+.logo a,
+.hb-icon a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+  padding-bottom: 5px;
+}
+.menu + input {
+  display: none;
+}
+.menu a:hover {
+  border-bottom: 2px solid grey;
+}
+.menu-sm {
+  width: 30vw;
+  height: 40vh;
+  background-color: #581515;
+  display: inline;
+  position: absolute;
+  top: 5vh;
+  right: 0px;
+  display: none;
+  padding: 20px 0 0 0;
+  z-index: 2;
+}
+
+.menu-sm a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  padding: 10px 0 10px 20px;
+  padding-bottom: 10px;
+  display: block;
+  padding-left: 20px;
+}
+
+.menu-sm a:hover {
+  border-bottom: 1px solid grey;
+  color: #dfdfdf;
+
+  width: 100%;
+  background-color: #812121;
+}
+.hb-icon {
+  width: 10%;
+  /* background-color: rgb(0, 255, 21); */
+  opacity: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 500px) {
+  .hb-icon {
+    opacity: 1;
+  }
+  .menu {
+    opacity: 0;
+  }
+  .window {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    display: none;
+    z-index: 1;
+  }
+  .menu-close {
+    position: absolute;
+    right: 34px;
+    top: 3px;
+    display: none;
+    font-weight: bold;
+  }
+  #f-hb-icon:checked ~ .menu-sm {
+    display: block;
+  }
+  #f-hb-icon:checked + label > .menu-open {
+    display: none;
+  }
+  #f-hb-icon:checked + label > .menu-close {
+    display: block;
+  }
+  #f-hb-icon:checked + label > .window {
+    display: block;
+    opacity: 0;
+  }
+}
